@@ -39,13 +39,22 @@ function addCard() {
 function changeCardColor(){
     let colors = ["blue", "red", "green", "yellow"]
     let cardNumber = parseInt(cardDiv.getAttribute("card-number"))
-    event.currentTarget.parentNode.style.backgroundColor = colors[parseInt(Math.floor(Math.random() * Math.floor(colors.length)))]
+    //choose a random color from colors array and assign to card
+    //event.currentTarget.parentNode.style.backgroundColor = colors[parseInt(Math.floor(Math.random() * Math.floor(colors.length)))]
+    
+    //This Code snipped generates a random HEX color value and assigns it to the card (I did not write this)
+    event.currentTarget.parentNode.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16)
     console.log(event.currentTarget.parentNode)
 }
 function changeFontColor() {
     let colors = ["blue", "red", "green", "yellow", "black", "white"]
     let cardNumber = parseInt(cardDiv.getAttribute("card-number"))
-    event.currentTarget.parentNode.style.color = colors[parseInt(Math.floor(Math.random() * Math.floor(colors.length)))]
+    //event.currentTarget.parentNode.style.color = colors[parseInt(Math.floor(Math.random() * Math.floor(colors.length)))]
+    
+        //This Code snipped generates a random HEX color value and assigns it to the card (I did not write this)
+    event.currentTarget.parentNode.style.color = '#' + Math.floor(Math.random() * 16777215).toString(16)
+    console.log(event.currentTarget.parentNode)
+    
     console.log(event.currentTarget.parentNode)
 }
 function deleteCard(){
