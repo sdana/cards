@@ -8,8 +8,8 @@ createButton.addEventListener("click", addCard)
 function addCard() {
     let newCard = document.createElement("DIV")
     newCard.setAttribute("class", "new-card")
-    let cardNumber = document.createAttribute("card-number")
-    newCard.setAttribute("card-number", numberOfCards)
+    // let cardNumber = document.createAttribute("card-number")
+    // newCard.setAttribute("card-number", numberOfCards)
 
     let cardColorButton = document.createElement("INPUT")
     cardColorButton.setAttribute("type", "color")
@@ -34,13 +34,13 @@ function addCard() {
     cardDiv.appendChild(newCard).appendChild(createBoxValue)
     createBox.value = ""
 
-    console.log(numberOfCards)
+    // console.log(numberOfCards)
 
-    return numberOfCards++
+    // return numberOfCards++
 }
 
 const changeCardColor = () => {
-    let cardNumber = parseInt(cardDiv.getAttribute("card-number"))
+    // let cardNumber = parseInt(cardDiv.getAttribute("card-number"))
     let colorPicker = document.getElementById("colorPicker")
     colorPicker.addEventListener("change", changeColor = () => {
         event.currentTarget.parentNode.style.backgroundColor = colorPicker.value
@@ -51,7 +51,7 @@ const changeCardColor = () => {
 
 }
 const changeFontColor = () => {
-    let cardNumber = parseInt(cardDiv.getAttribute("card-number"))
+    // let cardNumber = parseInt(cardDiv.getAttribute("card-number"))
     let colorPicker = document.getElementById("fontColorPicker")
     colorPicker.addEventListener("change", changeColor = () => {
     event.currentTarget.parentNode.style.color = colorPicker.value
