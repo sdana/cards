@@ -1,15 +1,14 @@
 const cardDiv = document.querySelector(".card-div")
 const createButton = document.getElementById("create-button")
 const createBox = document.getElementById("create-box")
-let numberOfCards = cardDiv.childElementCount
+let numberOfCards = 0
 
 createButton.addEventListener("click", addCard)
 
 function addCard() {
     let newCard = document.createElement("DIV")
     newCard.setAttribute("class", "new-card")
-    // let cardNumber = document.createAttribute("card-number")
-    // newCard.setAttribute("card-number", numberOfCards)
+    newCard.setAttribute("id", String(numberOfCards))
 
     let cardColorButton = document.createElement("INPUT")
     cardColorButton.setAttribute("type", "color")
@@ -34,29 +33,29 @@ function addCard() {
     cardDiv.appendChild(newCard).appendChild(createBoxValue)
     createBox.value = ""
 
-    // console.log(numberOfCards)
+    console.log(numberOfCards)
 
-    // return numberOfCards++
+    return numberOfCards++
 }
 
 const changeCardColor = () => {
-    // let cardNumber = parseInt(cardDiv.getAttribute("card-number"))
-    let colorPicker = document.getElementById("colorPicker")
+    let cardNumber = event.currentTarget.parentNode.getAttribute("id")
+    console.log(cardNumber)
+    let colorPicker = document.getElementById(`${cardNumber}`)
+    console.log(`${cardNumber}`)
     colorPicker.addEventListener("change", changeColor = () => {
-        event.currentTarget.parentNode.style.backgroundColor = colorPicker.value
-} )
-    event.currentTarget.parentNode.style.backgroundColor = colorPicker.value
-    console.log(event.currentTarget.parentNode)
-
+        cardNumber.style.backgroundColor = colorPicker.value
+    })
 
 }
 const changeFontColor = () => {
-    // let cardNumber = parseInt(cardDiv.getAttribute("card-number"))
+    let cardNumber = parseInt(cardDiv.getAttribute("card-number"))
     let colorPicker = document.getElementById("fontColorPicker")
     colorPicker.addEventListener("change", changeColor = () => {
-    event.currentTarget.parentNode.style.color = colorPicker.value
+        cardNumber.parentNode.style.color = colorPicker.value
     })
 }
+
 const deleteCard = () => {
     let whichCard = event.currentTarget.parentNode
     console.log(whichCard)
